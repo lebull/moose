@@ -1,9 +1,11 @@
 /*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
+/*https://coolors.co/071013-24363b-315659-f0eff7-dfe0e2*/
 
 html {
     color: #222;
     font-size: 1em;
     line-height: 1.4;
+	background-color: #F0EFF7;
 }
 
 ::-moz-selection {
@@ -70,22 +72,24 @@ body {
    =================== */
 
 .header-container {
-    border-bottom: 20px solid #e44d26;
+    border-bottom: 20px solid #071013;
 }
 
 .footer-container,
 .main aside {
-    border-top: 20px solid #e44d26;
+    border-top: 20px solid #071013;
 }
 
 .header-container,
 .footer-container,
 .main aside {
-    background: #f16529;
+    background: #24363B;
 }
 
+
+
 .title {
-    color: white;
+    color: #DFE0E2;
 }
 
 /* ==============
@@ -107,13 +111,13 @@ nav a {
     text-decoration: none;
     font-weight: bold;
 
-    color: white;
-    background: #e44d26;
+    color: #DFE0E2;
+    background: #071013;
 }
 
 nav a:hover,
 nav a:visited {
-    color: white;
+    color: #DFE0E2;
 }
 
 nav a:hover {
@@ -133,12 +137,12 @@ nav a:hover {
 }
 
 .main aside {
-    color: white;
+    color: #DFE0E2;
     padding: 0px 5% 10px;
 }
 
 .footer-container footer {
-    color: white;
+    color: #DFE0E2;
     padding: 20px 0;
 }
 
@@ -154,9 +158,43 @@ nav a:hover {
    Author's custom styles
    ========================================================================== */
 
+.room{
+
+	/*margin: 10px 0px;*/
+	display: block;
+
+}
 
 
 
+.light{
+	vertical-align:middle;
+	
+	width: 80%;
+	
+	padding: 10px 0px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+
+.light p{
+
+	display:inline-block;
+	width: 80%;
+
+}
+
+.light .toggle{
+	display:inline-block;
+	vertical-align:middle;
+	//float: right;
+
+	width: 20%;
+
+
+}
 
 
 

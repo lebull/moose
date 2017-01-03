@@ -14,6 +14,9 @@
         <link rel="stylesheet" href="css/normalize.min.css">
         <link rel="stylesheet" href="css/main.css">
 
+		<link rel="stylesheet" href="js/vendor/toggles/toggles.css">
+		<link rel="stylesheet" href="js/vendor/toggles/toggles-modern.css">
+		
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
     <body>
@@ -23,7 +26,8 @@
 
         <div class="header-container">
             <header class="wrapper clearfix">
-                <h1 class="title">h1.title</h1>
+                <h1 class="title">Lighting Dashboard</h1>
+				<!--
                 <nav>
                     <ul>
                         <li><a href="#">nav ul li a</a></li>
@@ -31,21 +35,30 @@
                         <li><a href="#">nav ul li a</a></li>
                     </ul>
                 </nav>
+				-->
             </header>
         </div>
 
         <div class="main-container">
             <div class="main wrapper clearfix">
 
+				<section class="room">
+					<h2>Living Room</h2>
+					<div class="light">
+						<p>Above The Computer</p>
+						<div class="toggle toggle-modern"></div>
+					</div>
+				</section>
+			
                 <article>
                     <header>
-                        <h1>article header h1</h1>
+                        <h1>Rooms</h1>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec.</p>
                     </header>
                     <section>
                         <h2>article section h2</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra.</p>
-                    </section>
+					</section>
                     <section>
                         <h2>article section h2</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra.</p>
@@ -70,9 +83,10 @@
             </footer>
         </div>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
+		<script src="js/vendor/toggles/toggles.min.js"></script>
         <script src="js/main.js"></script>
     </body>
 </html>
