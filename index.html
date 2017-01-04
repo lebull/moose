@@ -17,7 +17,13 @@
 		<link rel="stylesheet" href="js/vendor/toggles/toggles.css">
 		<link rel="stylesheet" href="js/vendor/toggles/toggles-modern.css">
 		
+		<link href="https://fonts.googleapis.com/css?family=Lato:200,400,700" rel="stylesheet">
+		
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+		
+		<link rel="stylesheet" href="js/togglediv/togglediv.css">
+		<script src="js/togglediv/togglediv.js"></script>
+		
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -41,18 +47,27 @@
 
         <div class="main-container">
             <div class="main wrapper clearfix">
-
-				<section class="room">
-					<h2>Living Room</h2>
-					<div class="light">
-						<p>Above The Computer</p>
-						<div class="toggle toggle-modern"></div>
-					</div>
+                
+				<section id="rooms">
+					<h1>Rooms</h1>
+					<section class="room">
+						<h2>Living Room</h2>
+						<div class="light">
+							<p>Above The Computer</p>
+							<div class="togglewrapper">
+								<div class="toggle toggle-modern"></div>
+							</div>
+						</div>
+					</section>
 				</section>
-			
-                <article>
+                
+				<hr />
+				
+				<article>
+				
+					<h1>Intended Behaviors</h1>
+				
                     <header>
-                        <h1>Rooms</h1>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec.</p>
                     </header>
                     <section>
@@ -68,11 +83,11 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor.</p>
                     </footer>
                 </article>
-
+				<!--
                 <aside>
                     <h3>aside</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices.</p>
-                </aside>
+                </aside>-->
 
             </div> <!-- #main -->
         </div> <!-- #main-container -->
