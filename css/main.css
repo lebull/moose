@@ -179,7 +179,7 @@ nav a:hover {
 	font-weight: lighter;
 	font-size: 24pt;
 	background:none;
-	width: 400px;
+	width: 100%;
 }
 
 .togglediv-on{
@@ -238,6 +238,7 @@ nav a:hover {
     .oldie nav a {
         margin: 0 0.7%;
     }
+
 }
 
 @media only screen and (min-width: 768px) {
@@ -270,6 +271,7 @@ nav a:hover {
     WIDE: Main
    ============ */
 
+	
     .main article {
         float: left;
         width: 57%;
@@ -279,6 +281,8 @@ nav a:hover {
         float: right;
         width: 28%;
     }
+
+	
 }
 
 @media only screen and (min-width: 1140px) {
@@ -286,11 +290,18 @@ nav a:hover {
 /* ===============
     Maximal Width
    =============== */
-
+	
+	
     .wrapper {
         width: 1026px; /* 1140px - 10% for margins */
         margin: 0 auto;
     }
+	
+		
+	
+	.togglediv{
+		width: 400px;
+	}
 }
 
 /* ==========================================================================

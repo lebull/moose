@@ -45,5 +45,14 @@ $(document).ready( function(){
 	addLight("Living Room", "Test1"); 
 	addLight("Living Room", "Test2");
 	addLight("Living Room", "Test3"); 
+	addLight("Living Room", "Test4"); 
+	addLight("Living Room", "Computer Room"); 
+	
+	addRoom("Throne Room");
+	addLight("Throne Room", "Throne Room");
+	
+	addRoom("Bed Room");
+	addLight("Bed Room", "Bed Room"); 
+	
 });
 
