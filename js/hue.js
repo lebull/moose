@@ -26,12 +26,16 @@ hue = {
 	},
 
 	turnLightOn: function(key){
-		this.setLight(key, {on: true});
+		this.setLight(key, {on: true}, echo, echo);
 
 	},
 	turnLightOff: function(key){
-		this.setLight(key, {on: false});
+		this.setLight(key, {on: false}, echo, echo);
 	}
+}
+
+function echo(data){
+	console.log(data);
 }
 /*
 $(document).ready(
