@@ -55,6 +55,8 @@
     {
         curl_setopt($ch, CURLOPT_PUT, TRUE);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $in_body); //dne
+        echo( $in_body );
+        exit;
     }
 
 
@@ -124,8 +126,9 @@
         header($header, FALSE);
     }
 
-    //echo $body;
-    echo $in_body;
+
+    echo $body;
+
     if ($logHeaders)
     {
         fclose($f);
