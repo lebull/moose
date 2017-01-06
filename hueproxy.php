@@ -48,6 +48,15 @@
         curl_setopt($ch, CURLOPT_POST, TRUE);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $_POST);
     }
+
+    //Same for put
+    if ($_SERVER['REQUEST_METHOD'] == 'PUT')
+    {
+        curl_setopt($ch, CURLOPT_PUT, TRUE);
+        //curl_setopt($ch, CURLOPT_POSTFIELDS, $_POST); //dne
+    }
+
+
     //curl_setopt($ch, CURLOPT_URL, $site . $request);
     curl_setopt($ch, CURLOPT_URL, $site);
     curl_setopt($ch, CURLOPT_HEADER, TRUE);
