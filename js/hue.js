@@ -19,8 +19,8 @@ hue = {
 				method: "PUT",
 				data: JSON.stringify(state),
 				dataType: 'json',
-				success: success,
-				error: error
+				success: function(data){ success(data); },
+				error: function(data){ error(data); }
 	   		}
 	   	);
 	},
