@@ -28,7 +28,7 @@
     $logHeaders = FALSE;
 
     /* Site to forward requests to.  */
-    $site = 'http://' + $myHueAddress + '/' + $location;
+    $site = $myHueAddress + '/' + $location;
 
     /* Domains to use when rewriting some headers. */
     $remoteDomain = $myLocalAddress;
