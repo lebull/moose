@@ -56,8 +56,8 @@
         //curl_setopt($ch, CURLOPT_PUT, TRUE);
         curl_setopt($channel, CURLOPT_CUSTOMREQUEST, "PUT");
         curl_setopt($ch, CURLOPT_POSTFIELDS, $in_body); //dne
-        echo( $in_body );
-        exit;
+        //echo( $in_body );
+        //exit;
     }
 
 
