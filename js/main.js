@@ -11,22 +11,37 @@ function addRoom(name) {
 	rooms[name] = $room;
 }
 
-function addLight(room, name){
+function addLight(room, key, light){
 	var $light = $("<button>", {class: "light"})
-	$light.html(name);
+	$light.html(light.name);
 	toggleDiv(
 		$light,
 		{
 			onOn: function(){ 
-				//Light changing code here.
+				hue.turnLightOn(key);
+			},
+			onOff: function(){ 
+				hue.turnLightOff(key);
 			}
 		}
 	);
 	rooms[room].append($light);
 }
 
-$(document).ready( function(){ 
+$(document).ready( function(){
 	addRoom("Living Room");
+
+	hue.getLights(
+		function(data){
+			for(var key in data){
+				addLight("Living Room", key, data[key]); 
+			}
+		}
+	);
+
+
+
+	/*
 	addLight("Living Room", "Test1"); 
 	addLight("Living Room", "Test2");
 	addLight("Living Room", "Test3"); 
@@ -38,6 +53,7 @@ $(document).ready( function(){
 	
 	addRoom("Bed Room");
 	addLight("Bed Room", "Bed Room"); 
+	*/
 	
 });
 
