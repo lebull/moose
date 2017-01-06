@@ -37,7 +37,7 @@
     $remoteDomain = $myLocalAddress;
     $proxyDomain = $myRemoteAddress;
 
-    $request = $_SERVER['REQUEST_URI'];
+    //$request = $_SERVER['REQUEST_URI'];
 
 
     $ch = curl_init();
@@ -48,7 +48,8 @@
         curl_setopt($ch, CURLOPT_POST, TRUE);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $_POST);
     }
-    curl_setopt($ch, CURLOPT_URL, $site . $request);
+    //curl_setopt($ch, CURLOPT_URL, $site . $request);
+    curl_setopt($ch, CURLOPT_URL, $site);
     curl_setopt($ch, CURLOPT_HEADER, TRUE);
 
     $headers = getallheaders();
