@@ -7,7 +7,7 @@ hue = {
 				method: "GET",
 				dataType: 'json',
 				success: function(data){ success(data); },
-				error: error
+				error: function(data){ error(data); }
 	   		}
 	   	);
 	},

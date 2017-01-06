@@ -36,6 +36,9 @@ $(document).ready( function(){
 			for(var key in data){
 				addLight("Living Room", key, data[key]); 
 			}
+		},
+		function(error){
+			console.log(error);
 		}
 	);
 
