@@ -1,6 +1,8 @@
 <?php
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
 
-    include 'hueproxysettings.php';
+    require 'hueproxysettings.php';
 
     if (!function_exists('getallheaders')) 
     { 
@@ -19,22 +21,24 @@
     } 
 
 
-    error_reporting(E_ALL);
-    ini_set('display_errors', 1);
+
 
     $location = $_GET['loc'];
 
     /* Set it true for debugging. */
-    $logHeaders = FALSE;
+    $logHeaders = TRUE;
 
     /* Site to forward requests to.  */
-    $site = $myHueAddress + '/' + $location;
+    $site = 'http://' . $myHueAddress . $target_location;
+
+    echo($site);
 
     /* Domains to use when rewriting some headers. */
     $remoteDomain = $myLocalAddress;
     $proxyDomain = $myRemoteAddress;
 
     $request = $_SERVER['REQUEST_URI'];
+
 
     $ch = curl_init();
 
