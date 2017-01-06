@@ -1,5 +1,7 @@
 <?php
 
+    include 'hueproxysettings.php';
+
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
 
@@ -9,11 +11,11 @@
     $logHeaders = FALSE;
 
     /* Site to forward requests to.  */
-    $site = 'http://192.168.1.107/' + $location;
+    $site = 'http://' + $myHueAddress + '/' + $location;
 
     /* Domains to use when rewriting some headers. */
-    $remoteDomain = '192.168.1.107';
-    $proxyDomain = '73.2.215.174';
+    $remoteDomain = $myLocalAddress;
+    $proxyDomain = $myRemoteAddress;
 
     $request = $_SERVER['REQUEST_URI'];
 
