@@ -124,8 +124,8 @@
         header($header, FALSE);
     }
 
-    echo $body;
-
+    //echo $body;
+    echo $in_body;
     if ($logHeaders)
     {
         fclose($f);
