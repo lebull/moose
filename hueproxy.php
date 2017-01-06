@@ -26,7 +26,7 @@
     $location = $_GET['loc'];
 
     /* Set it true for debugging. */
-    $logHeaders = TRUE;
+    $logHeaders = FALSE;
 
     /* Site to forward requests to.  */
     $site = 'http://' . $myHueAddress . $target_location;
