@@ -29,7 +29,7 @@
     $logHeaders = FALSE;
 
     /* Site to forward requests to.  */
-    $site = 'http://' . $myHueAddress . $location;
+    $site = $myHueAddress . $location;
 
     echo($site);
 
