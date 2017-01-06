@@ -31,6 +31,8 @@
     /* Site to forward requests to.  */
     $site = $myHueAddress . $location;
 
+    /* Request Body comes from STDIN */
+    $body = file_get_contents('php://input');
 
     /* Domains to use when rewriting some headers. */
     $remoteDomain = $myLocalAddress;
@@ -45,14 +47,14 @@
     if ($_SERVER['REQUEST_METHOD'] == 'POST')
     {
         curl_setopt($ch, CURLOPT_POST, TRUE);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $_POST);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
     }
 
     //Same for put
     if ($_SERVER['REQUEST_METHOD'] == 'PUT')
     {
         curl_setopt($ch, CURLOPT_PUT, TRUE);
-        //curl_setopt($ch, CURLOPT_POSTFIELDS, $_POST); //dne
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $_POST); //dne
     }
 
 
