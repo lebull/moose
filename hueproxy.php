@@ -31,7 +31,6 @@
     /* Site to forward requests to.  */
     $site = $myHueAddress . $location;
 
-    echo($site);
 
     /* Domains to use when rewriting some headers. */
     $remoteDomain = $myLocalAddress;
