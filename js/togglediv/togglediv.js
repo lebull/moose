@@ -58,6 +58,11 @@ function toggleDiv( $td, config ){
 function tdToggle($td){
 	$td._tdState = !$td._tdState;
 	$td.onToggle();
+	if($td._tdState){
+		$td.onOn();
+	}else{
+		$td.onOff();
+	}
 	refreshStyles($td);
 }
 
