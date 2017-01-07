@@ -23,6 +23,10 @@ _tdRuntime = {
 function toggleDiv( $td, config ){
 
 	$td._tdState = false;
+	if(config.state)
+	{
+		$td._tdState = config.state;
+	}
 	
 	
 	$td.onOn = function(){};
@@ -50,24 +54,28 @@ function toggleDiv( $td, config ){
 	$td.addClass(_tdRuntime.styles.defaultClass);
 	$td.addClass(_tdRuntime.styles.defaultCustom);
 	
-	refreshStyles($td);
+	_refreshStyles($td);
 }
 
-function tdSetState($td, state){
+function tdSetState($td, state, soft){
 	$td._tdState = state;
+	
+	if(!soft){
 		if($td._tdState){
-		$td.onOn();
-	}else{
-		$td.onOff();
+			$td.onOn();
+		}else{
+			$td.onOff();
+		}		
 	}
-	refreshStyles($td);
+
+	_refreshStyles($td);
 }
 
 function tdToggle($td){
 	tdSetState($td, !$td._tdState);
 }
 
-function refreshStyles($td){
+function _refreshStyles($td){
 	if($td._tdState){
 		$td.removeClass(_tdRuntime.styles.off);
 		$td.addClass(_tdRuntime.styles.on);
