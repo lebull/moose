@@ -12,6 +12,11 @@ function addRoom(name) {
 }
 
 function addLight(room, key, light){
+
+	if(!rooms[room]){
+		addRoom(room);
+	}
+
 	var $light = $("<button>", {class: "light"})
 	$light.html(light.name);
 	toggleDiv(
@@ -29,7 +34,7 @@ function addLight(room, key, light){
 }
 
 $(document).ready( function(){
-	addRoom("Living Room");
+	//addRoom("Living Room");
 
 	hue.getLights(
 		function(data){

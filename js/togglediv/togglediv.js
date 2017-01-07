@@ -53,12 +53,9 @@ function toggleDiv( $td, config ){
 	refreshStyles($td);
 }
 
-
-
-function tdToggle($td){
-	$td._tdState = !$td._tdState;
-	$td.onToggle();
-	if($td._tdState){
+function tdSetState($td, state){
+	$td._tdState = state;
+		if($td._tdState){
 		$td.onOn();
 	}else{
 		$td.onOff();
@@ -66,13 +63,15 @@ function tdToggle($td){
 	refreshStyles($td);
 }
 
+function tdToggle($td){
+	tdSetState($td, !$td._tdState);
+}
+
 function refreshStyles($td){
 	if($td._tdState){
-		$td.onOn();
 		$td.removeClass(_tdRuntime.styles.off);
 		$td.addClass(_tdRuntime.styles.on);
 	}else{
-		$td.onOff();
 		$td.removeClass(_tdRuntime.styles.on);
 		$td.addClass(_tdRuntime.styles.off);
 	}
