@@ -22,7 +22,7 @@ function addLight(room, key, light){
 	toggleDiv(
 		$light,
 		{
-			state: light.state,
+			state: light.state.on,
 			onOn: function(){ 
 				hue.turnLightOn(key);
 			},
