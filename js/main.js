@@ -34,6 +34,23 @@ function addLight(room, key, light){
 	rooms[room].append($light);
 }
 
+
+function periodicRefresh(){
+
+	hue.getLights(
+		function(data){
+			for(var key in data){
+				//addLight("Living Room", key, data[key]); 
+			}
+		},
+		function(error){
+			console.log(error);
+		}
+	);
+
+	setInterval(periodicRefresh, 3000);
+}
+
 $(document).ready( function(){
 	//addRoom("Living Room");
 
