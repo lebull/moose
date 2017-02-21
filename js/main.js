@@ -48,38 +48,19 @@ function periodicRefresh(){
 		}
 	);
 
-	setInterval(periodicRefresh, 3000);
+	//setInterval(periodicRefresh, 3000);
 }
 
 $(document).ready( function(){
-	//addRoom("Living Room");
 
-	hue.getLights(
-		function(data){
-			for(var key in data){
-				addLight("Living Room", key, data[key]); 
-			}
-		},
-		function(error){
-			console.log(error);
+	hue.init(function(){
+		for(var lightId in hue.data.lights){
+			addLight(
+				hue.getGroupFromLight(lightId).name, 
+				lightId, 
+				hue.data.lights[lightId]
+			); 
 		}
-	);
-
-
-
-	/*
-	addLight("Living Room", "Test1"); 
-	addLight("Living Room", "Test2");
-	addLight("Living Room", "Test3"); 
-	addLight("Living Room", "Test4"); 
-	addLight("Living Room", "Computer Room"); 
-	
-	addRoom("Throne Room");
-	addLight("Throne Room", "Throne Room");
-	
-	addRoom("Bed Room");
-	addLight("Bed Room", "Bed Room"); 
-	*/
-	
+	});
 });
 

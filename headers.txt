@@ -52,3 +52,45 @@
 * Closing connection 0
 * Could not resolve host: http
 * Closing connection 0
+* Rebuilt URL to: 73.2.125.174/
+* Hostname was NOT found in DNS cache
+*   Trying 73.2.125.174...
+* connect to 73.2.125.174 port 80 failed: Connection timed out
+* Failed to connect to 73.2.125.174 port 80: Connection timed out
+* Closing connection 2
+* Rebuilt URL to: 73.2.125.174/
+* Hostname was NOT found in DNS cache
+*   Trying 73.2.125.174...
+* connect to 73.2.125.174 port 80 failed: Connection timed out
+* Failed to connect to 73.2.125.174 port 80: Connection timed out
+* Closing connection 3
+* Rebuilt URL to: 73.2.125.174/
+* Hostname was NOT found in DNS cache
+*   Trying 73.2.125.174...
+* connect to 73.2.125.174 port 80 failed: Connection timed out
+* Failed to connect to 73.2.125.174 port 80: Connection timed out
+* Closing connection 0
+* Rebuilt URL to: 192.168.1.100/
+* Hostname was NOT found in DNS cache
+*   Trying 192.168.1.100...
+* connect to 192.168.1.100 port 80 failed: Connection timed out
+* Failed to connect to 192.168.1.100 port 80: Connection timed out
+* Closing connection 0
+* Rebuilt URL to: 192.168.1.100/
+* Hostname was NOT found in DNS cache
+*   Trying 192.168.1.100...
+* connect to 192.168.1.100 port 80 failed: Connection timed out
+* Failed to connect to 192.168.1.100 port 80: Connection timed out
+* Closing connection 0
+* Rebuilt URL to: 192.168.1.100/
+* Hostname was NOT found in DNS cache
+*   Trying 192.168.1.100...
+* connect to 192.168.1.100 port 80 failed: Connection timed out
+* Failed to connect to 192.168.1.100 port 80: Connection timed out
+* Closing connection 0
+* Rebuilt URL to: 192.168.1.100/
+* Hostname was NOT found in DNS cache
+*   Trying 192.168.1.100...
+* connect to 192.168.1.100 port 80 failed: Connection timed out
+* Failed to connect to 192.168.1.100 port 80: Connection timed out
+* Closing connection 0
