@@ -25,14 +25,17 @@ hue = {
 				success: function(data){
 					var message = "Success: " + config.method + " " + url;
 					console.log(message);
-					config.success(data); 
-					
+					if(config.success)
+					{
+						config.success(data); 
+					}
 				},
 				error: function(data){
 					var message = "Error: " + config.method + " " + url;
 					console.error(message);
-					config.error(data); 
-					
+					if(config.error){
+						config.error(data); 
+					}
 				}
 	   		}
 	   	);
@@ -46,8 +49,7 @@ hue = {
 			
 			var aChangedLights = that._getChangedLightsFromData(data, that.data);
 			
-			
-			
+
 			that.data = data;
 			
 			if(success){
