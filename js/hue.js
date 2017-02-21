@@ -48,7 +48,6 @@ hue = {
 		this.getData( function(data){
 			
 			var aChangedLights = that._getChangedLightsFromData(data, that.data);
-			
 
 			that.data = data;
 			
@@ -56,7 +55,6 @@ hue = {
 				success();
 			}
 		});
-		
 	},
 	
 	getData: function(success, error)
