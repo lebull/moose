@@ -170,6 +170,7 @@ nav a:hover {
 
 .togglediv {
 
+	color: #AAA;
 	cursor: pointer;
 	text-align: center;
 	border: 0;
@@ -180,6 +181,11 @@ nav a:hover {
 	font-size: 24pt;
 	background:none;
 	width: 100%;
+	
+	outline: solid 1px #AAA;
+	box-shadow: inset 0 0 50px #AAA;
+	
+	transition: background-color 0.5s ease;
 }
 
 .togglediv-on{
@@ -189,17 +195,6 @@ nav a:hover {
 	color: #FFF;
 }
 
-.togglediv-off{
-	outline: solid 1px #AAA;
-	box-shadow: inset 0 0 50px #AAA;
-	color: #AAA;
-
-}
-
-.togglediv button{
-	border: none;
-	outline: none;
-}
 
 /* ==========================================================================
    Media Queries

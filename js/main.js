@@ -1,5 +1,5 @@
 
-
+/*UI*/
 var rooms = {};
 
 
@@ -17,8 +17,12 @@ function addLight(room, key, light){
 		addRoom(room);
 	}
 
+	var lightElementId = "light-" + key;
+
 	var $light = $("<button>", {class: "light"})
 	$light.html(light.name);
+	$light.attr("id", lightElementId);
+	
 	toggleDiv(
 		$light,
 		{
@@ -34,33 +38,38 @@ function addLight(room, key, light){
 	rooms[room].append($light);
 }
 
-
-function periodicRefresh(){
-
-	hue.getLights(
-		function(data){
-			for(var key in data){
-				//addLight("Living Room", key, data[key]); 
-			}
-		},
-		function(error){
-			console.log(error);
-		}
-	);
-
-	//setInterval(periodicRefresh, 3000);
+function setLight(lightId, onOff){
+	//console.log("Set " + lightId + " " + onOff);
+	$td = $("#light-" + lightId);
+	tdSetState($td, onOff, true);
 }
 
-$(document).ready( function(){
+/*Events*/
+function periodicRefresh(){
+	hue.refresh();
+}
 
-	hue.init(function(){
-		for(var lightId in hue.data.lights){
+function onInit(){
+	for(var lightId in hue.data.lights){
 			addLight(
 				hue.getGroupFromLight(lightId).name, 
 				lightId, 
 				hue.data.lights[lightId]
 			); 
 		}
-	});
+}
+
+function onLightsChange(dLights){
+		for( var lightId in dLights)
+		{
+			setLight( lightId, dLights[lightId].state.on );
+		}
+}
+
+$(document).ready( function(){
+	hue.bindOnLightsChanged(onLightsChange);
+	hue.init(onInit);
+	//periodicRefresh();
+	setInterval(periodicRefresh, 3000);
 });
 

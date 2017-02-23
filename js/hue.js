@@ -45,11 +45,22 @@ hue = {
 		
 		var that = this;
 		
-		this.getData( function(data){
+		this.getData( function(newData){
 			
-			var aChangedLights = that._getChangedLightsFromData(data, that.data);
-
-			that.data = data;
+			if(!that.data)
+			{
+				that.data = newData;
+			}else{
+				
+				var oldData = that.data
+				
+				that.data = newData;
+				
+				var dChangedLights = that._getChangedLightsFromData(newData, oldData);
+				if (!$.isEmptyObject(dChangedLights)){
+					that._onLightsChange(dChangedLights);
+				}
+			}
 			
 			if(success){
 				success();
@@ -80,11 +91,30 @@ hue = {
 	},
 
 	setLight: function(id, state, success, error){
+		
+		var that = this;
+		
 		this._hubCall({
 			path:"/lights/" + id + "/state",
 			method: "PUT",
 			data: JSON.stringify(state),
-			success: success,
+			success: function(data){
+				
+				//Merge changes with current data
+				for(var key in state)
+				{
+					that.data.lights[id].state[key] = state[key];
+				}
+
+				if(that._onLightsChange)
+				{
+					that._onLightsChange({id: that.data.lights[id]});
+				}
+				
+				if(success){
+					success(data);
+				}
+			},
 			error:  error
 		});
 	},
@@ -117,13 +147,31 @@ hue = {
 		return null;
 	},
 	
-	_getChangedLightsFromData: function(data1, data2){
+	_getChangedLightsFromData: function(newData, oldData){
 		//TODO: Impliment
-		return false;
+		//return false;
+		
+		var dReturnLights = {};
+		
+		for( var lightId in newData.lights)
+		{
+			//Make sure equivilancy is working here
+			if(JSON.stringify(newData.lights[lightId]) 
+					!== JSON.stringify(oldData.lights[lightId]))
+			{
+				dReturnLights[lightId] = newData.lights[lightId];
+				console.log("Light " + lightId + " has changed.");
+			}
+			
+
+		}
+		
+		return dReturnLights;
+		
 	},
 	
-	_onLightChanged: function(lightId){},
+	_onLightsChange: function(dLights){},
 	bindOnLightsChanged: function(newFunction){
-		this._onLightsChanged = newFunction;
+		this._onLightsChange = newFunction;
 	}
 };

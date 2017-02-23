@@ -57,7 +57,7 @@ function toggleDiv( $td, config ){
 	_refreshStyles($td);
 }
 
-function tdSetState($td, state, soft){
+function tdSetState($td, state, soft = false){
 	$td._tdState = state;
 	
 	if(!soft){
@@ -68,19 +68,24 @@ function tdSetState($td, state, soft){
 		}		
 	}
 
-	_refreshStyles($td);
+	_refreshStyles($td, soft);
 }
 
 function tdToggle($td){
 	tdSetState($td, !$td._tdState);
 }
 
-function _refreshStyles($td){
-	if($td._tdState){
-		$td.removeClass(_tdRuntime.styles.off);
-		$td.addClass(_tdRuntime.styles.on);
-	}else{
-		$td.removeClass(_tdRuntime.styles.on);
-		$td.addClass(_tdRuntime.styles.off);
+function _refreshStyles($td, soft = false){
+	
+	var duration = 50;
+	if(soft){
+		duration = 750;
 	}
+
+	if($td._tdState !== $td.hasClass(_tdRuntime.styles.on))
+	{
+		$td.toggleClass(_tdRuntime.styles.on, duration);
+	}
+
+	
 }
