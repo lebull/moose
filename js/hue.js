@@ -10,10 +10,7 @@ hue = {
 	 */
 	_hubCall: function(config){
 		
-		var url = huesettings.address 
-				+ huesettings.proxyPath 
-				+ huesettings.user 
-				+ config.path;
+		var url = huesettings.proxyAddress + config.path;
 		
 		console.log("Call: " + config.method + " " + url);
 		$.ajax(url,
