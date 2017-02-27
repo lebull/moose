@@ -23,14 +23,22 @@
         } 
     } 
 
-    $location = $_GET['loc'];
+    if($_GET['loc']){
+        $location = $_GET['loc'];
+    }else{
+        $location = $_GET['PATH_INFO'];
+    }
+
     
+    if(!$targetPathPrefix){
+        $targetPathPrefix = "";
+    }
 
     /* Set it true for debugging. */
     $logHeaders = FALSE;
 
     /* Site to forward requests to.  */
-    $site = $myHueAddress . $location;
+    $site = $myHueAddress . $targetPathPrefix . $location;
 
     /* Request Body comes from STDIN */
     $in_body = file_get_contents('php://input');
