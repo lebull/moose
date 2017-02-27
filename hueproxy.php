@@ -4,6 +4,7 @@
 
     //echo("Hi");
 
+    $debug = TRUE;
 
     require 'hueproxysettings.php';
 
@@ -28,14 +29,13 @@
     }else{
         $location = $_PATH_INFO;
     }
-
     
     if(!$targetPathPrefix){
         $targetPathPrefix = "";
     }
 
     /* Set it true for debugging. */
-    $logHeaders = FALSE;
+    $logHeaders = $debug;
 
     /* Site to forward requests to.  */
     $site = $myHueAddress . $targetPathPrefix . $location;
