@@ -26,7 +26,7 @@
     if($_GET['loc']){
         $location = $_GET['loc'];
     }else{
-        $location = $_GET['PATH_INFO'];
+        $location = $_PATH_INFO;
     }
 
     
