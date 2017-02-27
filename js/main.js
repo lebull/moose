@@ -70,6 +70,6 @@ $(document).ready( function(){
 	hue.bindOnLightsChanged(onLightsChange);
 	hue.init(onInit);
 	//periodicRefresh();
-	setInterval(periodicRefresh, 3000);
+	//setInterval(periodicRefresh, 3000);
 });
 
