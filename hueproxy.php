@@ -107,6 +107,7 @@
         global $myAddressRelativeToProxy;
         global $myAddressRelativeToRequester;
         global $targetAddress;
+        global $targetPathPrefix;
         
         if($_GET['loc']){
             $location = $_GET['loc'];
