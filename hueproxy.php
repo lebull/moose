@@ -1,10 +1,6 @@
 <?php
-    //error_reporting(E_ALL);
-    //ini_set('display_errors', 1);
 
-    //echo("Hi");
-
-    $debug = TRUE;
+    $DEBUG = ($_GET['debug'] == "1");
 
     require 'hueproxysettings.php';
 
@@ -33,9 +29,6 @@
     if(!$targetPathPrefix){
         $targetPathPrefix = "";
     }
-
-    /* Set it true for debugging. */
-    $logHeaders = $debug;
 
     /* Site to forward requests to.  */
     $site = $myHueAddress . $targetPathPrefix . $location;
@@ -95,12 +88,6 @@
     }
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 
-    if ($logHeaders)
-    {
-        $f = fopen("headers.txt", "a");
-        curl_setopt($ch, CURLOPT_VERBOSE, TRUE);
-        curl_setopt($ch, CURLOPT_STDERR, $f);
-    }
 
     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
     $response = curl_exec($ch);
@@ -138,11 +125,10 @@
 
 
     echo $body;
-
-    if ($logHeaders)
-    {
-        fclose($f);
-    }
     curl_close($ch);
+    
+    if($debug){
+        echo($headers . "\n---\n" . $body);
+    }
 
 ?>
