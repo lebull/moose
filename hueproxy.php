@@ -1,6 +1,9 @@
 <?php
 
-    $DEBUG = ($_GET['debug'] == "1");
+    $debug = ($_GET['debug'] == "1");
+    
+
+	echo("--Debugging Enabled\n");
 
     require 'hueproxysettings.php';
 
@@ -23,7 +26,7 @@
     if($_GET['loc']){
         $location = $_GET['loc'];
     }else{
-        $location = $_PATH_INFO;
+        $location = $_SERVER['PATH_INFO'];
     }
     
     if(!$targetPathPrefix){
@@ -32,6 +35,12 @@
 
     /* Site to forward requests to.  */
     $site = $myHueAddress . $targetPathPrefix . $location;
+
+    
+    if($debug){
+        //echo($headers . "\n---\n" . $body);
+        echo("--Site: " . $site . "\n");
+    }
 
     /* Request Body comes from STDIN */
     $in_body = file_get_contents('php://input');
@@ -126,9 +135,6 @@
 
     echo $body;
     curl_close($ch);
-    
-    if($debug){
-        echo($headers . "\n---\n" . $body);
-    }
+
 
 ?>
