@@ -144,6 +144,39 @@ hue = {
 		return null;
 	},
 	
+	
+	setScene: function(sceneId, success, error){
+		//var sceneId = "0MAEgugSd1Ou7Mg";
+		
+		aGroups = this.getGroupsFromScene(sceneId);
+		
+		for(var i = 0; i < aGroups.length; i++)
+		{
+			this._hubCall({
+				path:"/groups/" + groupId + "/action",
+				method: "PUT",
+				data: JSON.stringify({"scene":sceneId}),
+				success: success,
+				error: error
+			});
+		}
+	},
+	
+	getGroupsFromScene: function(sSceneId){
+		
+		aGroups = [];
+		
+		aLights = hue.data.scenes[sSceneId].lights;
+		
+		for(var i = 0; i < aLights.length; i++){
+			aGroups.push(
+				this.getGroupFromLight(aLights[i])
+			);
+		}
+		
+		return aGroups;
+	},
+		
 	_getChangedLightsFromData: function(newData, oldData){
 		//TODO: Impliment
 		//return false;
