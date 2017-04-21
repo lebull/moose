@@ -152,6 +152,8 @@ hue = {
 		
 		for(var i = 0; i < aGroups.length; i++)
 		{
+			var groupId = aGroups[i].id;
+		
 			this._hubCall({
 				path:"/groups/" + groupId + "/action",
 				method: "PUT",

@@ -11,6 +11,23 @@ function addRoom(name) {
 	rooms[name] = $room;
 }
 
+function addScene(room, key, scene){
+
+	if(!rooms[room]){
+		addRoom(room);
+	}
+
+	var elementId = "scene-" + key;
+
+	var $scene = $("<button>", {class: "scene"})
+		.click(function(){ hue.setScene(key); });
+	$scene.html(scene.name);
+	$scene.attr("id", elementId);
+
+	rooms[room].append($scene);
+}
+
+
 function addLight(room, key, light){
 
 	if(!rooms[room]){
@@ -50,6 +67,22 @@ function periodicRefresh(){
 }
 
 function onInit(){
+
+	for(var sceneId in hue.data.scenes)
+	{
+			addScene(
+				hue.getGroupsFromScene(sceneId)[0].name,
+				//hue.data.scenes[sceneId].name, 
+				sceneId, 
+				hue.data.scenes[sceneId]
+			); 
+	}
+	
+	for(var roomId in rooms)
+	{
+		rooms[roomId].append("<br />");
+	}
+
 	for(var lightId in hue.data.lights){
 			addLight(
 				hue.getGroupFromLight(lightId).name, 
